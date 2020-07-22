@@ -1,0 +1,13 @@
+ion-image {
+    width: 100%;
+}
+
+ion-col, ion-grid {
+    margin: 0;
+    padding: 0;
+}
+
+ion-col{
+    margin: auto;
+    display: block;
+}
