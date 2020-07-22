@@ -1,0 +1,23 @@
+.imageJauge {
+    width: 50%;
+    margin-left: 5.4em;
+    position: absolute;
+}
+
+.imageCarte {
+    width: 80%;
+    margin: auto;
+}
+
+.points {
+    margin-left: 2em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.nbPoints {
+    text-align: center;
+    margin-top: 7em;
+}
