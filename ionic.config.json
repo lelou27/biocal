@@ -1,0 +1,7 @@
+{
+  "name": "biocalIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
