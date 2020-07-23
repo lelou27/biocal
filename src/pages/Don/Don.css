@@ -1,8 +1,128 @@
 .searchField{
-    border-radius: 0;
     border-color: #603200;
     text-align: left;
-    padding-left: 1em;
-    width: 40%;
-    margin-left: 5%;
+    width: 50%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 10%;
+    margin-top: 1.5em;
+    border-style: solid;
+    height: 1.4em;
+    border-width: 0.15em;
+    vertical-align: middle;
+}
+
+.searchField:focus{
+    outline: none;
+}
+
+.imgFilter{
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-right: 10%;
+    margin-top:-11.5%
+}
+
+.IonItem1{
+    --ion-item-background:#DE6000;
+}
+
+.IonItem2{
+    --ion-item-background:#FF8B33;
+}
+
+.IonItem3{
+    --ion-item-background:#E68A45;
+}
+
+.IonItem4{
+    --ion-item-background:#BF773F;
+}
+
+.IonItem5{
+    --ion-item-background:#8C5123;
+}
+
+
+.popover .popover-content{
+    width: 70%;
+}
+
+.validButton{
+    width: 70%;
+    height: 1.5em;
+    margin: 0.5em auto;
+    font-size: 2em;
+    background-color: #603200;
+    color: white;
+    border-radius: 0.6em;
+}
+
+.validButton:hover{
+    outline: none;
+}
+
+.containerValidButton{
+    text-align: center;
+}
+
+.labelFilter{
+    text-align: center;
+}
+
+.assoContainer{
+    width: 80%;
+    margin: 5% 10% 5% 10%;
+    text-align: center;
+
+}
+
+.association{
+    border-style: solid;
+    height: 143px;
+    border-color: #603200;
+    border-radius: 1em;
+    margin-bottom: 1em;
+}
+
+.imgAsso{
+    width: 140px;
+    height: 140px;
+    border-top-left-radius:  1em;
+    border-bottom-left-radius: 1em;
+    overflow: hidden;
+    border-right: #603200;
+    border-style: solid;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    float: left;
+}
+
+.assoInfoContainer{
+    text-align: center;
+    width: 100%;
+}
+
+.assoName{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.assoButton{
+    background-color: #603200;
+    color: white;
+    width: 35%;
+    margin-top: 3%;
+    height: 1.7em;
+    font-size: 1.2em;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.assoButton:hover{
+    outline: none;
 }
