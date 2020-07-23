@@ -6,12 +6,12 @@
     overflow: hidden;
 }
 
-div{
+.container{
     display: list-item;
     text-align: center;
 }
 
-textarea{
+.personalInfo{
     margin-top: 1em;
     border-color: #255E00;
     border-style: solid;
@@ -23,17 +23,17 @@ textarea{
     color: #3E3E3E;
 }
 
-textarea:focus{
+.personalInfo:focus{
     outline: none;
 }
 
-h1{
+.usernameTitle{
     font-size: 1.25em;
     text-align: left;
     margin-left: 12.5%;
 }
 
-button{
+.accountButton{
     background-color: #603200;
     color: white;
     height: 1.7em;
@@ -44,10 +44,12 @@ button{
     border-radius: 0.6em;
 }
 
-button:focus{
+.accountButton:focus{
     outline: none;
 }
 
 .buttondiv{
+    display: list-item;
+    text-align: center;
     margin-bottom: 2em;
 }

@@ -1,0 +1,8 @@
+.searchField{
+    border-radius: 0;
+    border-color: #603200;
+    text-align: left;
+    padding-left: 1em;
+    width: 40%;
+    margin-left: 5%;
+}
