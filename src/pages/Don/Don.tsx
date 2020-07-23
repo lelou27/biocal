@@ -12,6 +12,7 @@ import {
 } from '@ionic/react';
 import './Don.css';
 import {AppHeader} from "../../components/AppHeader/AppHeader";
+import {useRouteMatch} from "react-router";
 
 const Don: React.FC = () => {
     const [showPopover, setShowPopover] = useState(false);
@@ -57,40 +58,40 @@ const Don: React.FC = () => {
                         <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
                         <div className={'assoInfoContaine'}>
                             <h1 className={'assoName'}>GreenPeace</h1>
-                            <button ion-button className={'assoButton'}>A propos</button>
-                            <button ion-button className={'assoButton'}>Faire don</button>
+                            <IonButton className={'assoButton'} href={'/Apropos'}>A propos</IonButton>
+                            <IonButton className={'assoButton'} href={'/FaireDon'}>Faire don</IonButton>
                         </div>
                     </div>
                     <div className={'association'}>
                         <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
                         <div className={'assoInfoContaine'}>
                             <h1 className={'assoName'}>GreenPeace</h1>
-                            <button ion-button className={'assoButton'}>A propos</button>
-                            <button ion-button className={'assoButton'}>Faire don</button>
+                            <IonButton className={'assoButton'} href={'/Apropos'}>A propos</IonButton>
+                            <IonButton className={'assoButton'} href={'/FaireDon'}>Faire don</IonButton>
                         </div>
                     </div>
                     <div className={'association'}>
                         <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
                         <div className={'assoInfoContaine'}>
                             <h1 className={'assoName'}>GreenPeace</h1>
-                            <button ion-button className={'assoButton'}>A propos</button>
-                            <button ion-button className={'assoButton'}>Faire don</button>
+                            <IonButton className={'assoButton'} href={'/Apropos'}>A propos</IonButton>
+                            <IonButton className={'assoButton'} href={'/FaireDon'}>Faire don</IonButton>
                         </div>
                     </div>
                     <div className={'association'}>
                         <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
                         <div className={'assoInfoContaine'}>
                             <h1 className={'assoName'}>GreenPeace</h1>
-                            <button ion-button className={'assoButton'}>A propos</button>
-                            <button ion-button className={'assoButton'}>Faire don</button>
+                            <IonButton className={'assoButton'} href={'/Apropos'}>A propos</IonButton>
+                            <IonButton className={'assoButton'} href={'/FaireDon'}>Faire don</IonButton>
                         </div>
                     </div>
                     <div className={'association'}>
                         <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
                         <div className={'assoInfoContaine'}>
                             <h1 className={'assoName'}>GreenPeace</h1>
-                            <button ion-button className={'assoButton'}>A propos</button>
-                            <button ion-button className={'assoButton'}>Faire don</button>
+                            <IonButton className={'assoButton'} href={'/Apropos'}>A propos</IonButton>
+                            <IonButton className={'assoButton'} href={'/FaireDon'}>Faire don</IonButton>
                         </div>
                     </div>
                 </div>
