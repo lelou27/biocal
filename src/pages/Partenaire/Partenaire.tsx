@@ -36,7 +36,7 @@ const Partenaire: React.FC = () => {
 
     return (
         <IonPage>
-            <AppHeader/>
+            <AppHeader show={true}/>
             <IonContent>
                 <IonLoading
                     isOpen={loading}
