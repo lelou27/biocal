@@ -9,7 +9,7 @@ const Fidelity: React.FC = () => {
     const [barcode, setBarCode] = useState('');
     const [user, setUser] = useState({ _id: String, userXP: Number});
     const [error, setError] = useState(Boolean);
-    const [loaded, setLoaded] = useState(Boolean)
+    const [loaded, setLoaded] = useState(Boolean);
 
     useEffect(() => {
         if (barcode === '') {

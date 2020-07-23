@@ -1,1 +1,1 @@
-export const API_ROUTE = 'http://192.168.1.7:5000'
+export const API_ROUTE = 'http://127.0.0.1:5000'
