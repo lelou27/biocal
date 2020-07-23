@@ -1,17 +1,31 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonImg,IonButtons } from '@ionic/react';
 import './Account.css';
+import {AppHeader} from "../../components/AppHeader/AppHeader";
+import Barcode from "react-native-barcode-builder";
 
 const Account: React.FC = () => {
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle>Account</IonTitle>
-                </IonToolbar>
-            </IonHeader>
+            <AppHeader/>
             <IonContent>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci corporis distinctio rerum. Aut distinctio est, eum fugiat harum inventore necessitatibus placeat possimus praesentium provident quae quia quos sint tenetur ullam.</p>
+                <IonImg className={'imgProfile'} src={require("../../assets/images/profile-b.png")}/>
+                <div>
+                    <textarea disabled>Prénom</textarea>
+                    <textarea disabled>Nom</textarea>
+                    <textarea disabled>Ville</textarea>
+                </div>
+                <h1>Gérer mes identifiant : </h1>
+                <div>
+                    <textarea>Email</textarea>
+                    <textarea>Password</textarea>
+                </div>
+                <div className={'buttondiv'}>
+                    <button ion-button>Modifier</button>
+                    <br/>
+                    <button ion-button>Déconnexion</button>
+                </div>
+                <Barcode value="Hello World" format="CODE128" />
             </IonContent>
         </IonPage>
     );
