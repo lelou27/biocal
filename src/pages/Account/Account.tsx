@@ -1,24 +1,59 @@
-import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonImg,IonButtons } from '@ionic/react';
+import React, {useEffect, useState} from 'react';
+import {
+    IonContent,
+    IonHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+    IonImg,
+    IonLabel,
+    IonButtons,
+    IonText,
+    IonTextarea, IonInput, IonItem
+} from '@ionic/react';
 import './Account.css';
 import {AppHeader} from "../../components/AppHeader/AppHeader";
-//import Barcode from "react-native-barcode-builder";
+import {getUser} from '../../services/UserService';
 
 const Account: React.FC = () => {
+
+    const [user, setUser] = useState({ _id: String, firstName: String, lastName: String, email: String});
+    const [error, setError] = useState(Boolean);
+    const [loaded, setLoaded] = useState(Boolean);
+
+    useEffect(() => {
+        if (!error && !loaded) {
+            getLocalUser();
+        }
+    });
+
+    const getLocalUser = async () => {
+        try {
+            const user = await getUser('5f19b195691187b0b8421dbe');
+            console.log(user);
+            setUser(user);
+            setLoaded(true);
+        } catch (e) {
+            setError(true);
+            setLoaded(true);
+        }
+    };
+    const email = (user.email).toString();
+
     return (
         <IonPage>
             <AppHeader show={true}/>
             <IonContent>
                 <IonImg className={'imgProfile'} src={require("../../assets/images/profile-b.png")}/>
                 <div className={'container'}>
-                    <textarea disabled className={'personalInfo'}>Prénom</textarea>
-                    <textarea disabled className={'personalInfo'}>Nom</textarea>
-                    <textarea disabled className={'personalInfo'}>Ville</textarea>
+                    <IonTextarea className={'personalInfo'}>{user.firstName}</IonTextarea>
+                    <IonTextarea disabled className={'personalInfo'}>{user.lastName}</IonTextarea>
+                    <IonTextarea disabled className={'personalInfo'}>Ville</IonTextarea>
                 </div>
                 <h1 className={'usernameTitle'}>Gérer mes identifiant : </h1>
                 <div className={'container'}>
-                    <textarea className={'personalInfo'}>Email</textarea>
-                    <textarea className={'personalInfo'}>Password</textarea>
+                    <IonInput className={'personalInfo'} type={'email'} placeholder={email}></IonInput>
+                    <IonInput className={'personalInfo'} placeholder={'password'}></IonInput>
                 </div>
                 <div className={'buttondiv'}>
                     <button ion-button className={'accountButton'}>Modifier</button>
