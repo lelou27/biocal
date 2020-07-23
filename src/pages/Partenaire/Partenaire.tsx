@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {IonButton, IonContent, IonLoading, IonPage, IonToast} from '@ionic/react';
 import './Partenaire.css';
 import {AppHeader} from "../../components/AppHeader/AppHeader";
-import {AppHeader} from "../../components/AppHeader/AppHeader";
 import {Geolocation, Geoposition} from "@ionic-native/geolocation";
 
 interface LocationError {
