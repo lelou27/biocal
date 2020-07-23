@@ -18,9 +18,12 @@
     border-radius: 2em;
     border-width: 0.15em;
     width: 75%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
     height: 1.7em;
     text-align: center;
     color: #3E3E3E;
+    font-size: 1.25em;
 }
 
 .personalInfo:focus{
@@ -28,9 +31,11 @@
 }
 
 .usernameTitle{
+    margin-top: 2rem;
     font-size: 1.25em;
     text-align: left;
     margin-left: 12.5%;
+    font-weight: bold;
 }
 
 .accountButton{

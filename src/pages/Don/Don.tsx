@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     IonContent,
     IonPage,
@@ -8,15 +8,33 @@ import {
     IonLabel,
     IonPopover,
     IonButton,
-    IonRadio, IonList, IonRadioGroup, IonListHeader, IonItemDivider, IonSearchbar
+    IonRadio, IonList, IonRadioGroup, IonListHeader, IonItemDivider, IonSearchbar, IonText
 } from '@ionic/react';
 import './Don.css';
 import {AppHeader} from "../../components/AppHeader/AppHeader";
+import {getAssociation} from "../../services/AssociationService";
 
 const Don: React.FC = () => {
     const [showPopover, setShowPopover] = useState(false);
     const [selected, setSelected] = useState<string>('');
     const [searchText, setSearchText] = useState('');
+    const [associations, setAssociations] = useState<any>([]);
+
+    useEffect(() => {
+       getAssociationLocal();
+    });
+
+    const getAssociationLocal = async () => {
+      try {
+          if (associations.length === 0) {
+              const assos = await getAssociation();
+              setAssociations(assos);
+          }
+      } catch (e) {
+          setAssociations(e);
+      }
+    };
+
     return (
         <IonPage>
             <AppHeader show={true}/>
@@ -53,46 +71,18 @@ const Don: React.FC = () => {
                     </div>
                 </IonPopover>
                 <div className={'assoContainer'}>
-                    <div className={'association'}>
-                        <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
-                        <div className={'assoInfoContaine'}>
-                            <h1 className={'assoName'}>GreenPeace</h1>
-                            <button ion-button className={'assoButton'}>A propos</button>
-                            <button ion-button className={'assoButton'}>Faire don</button>
-                        </div>
-                    </div>
-                    <div className={'association'}>
-                        <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
-                        <div className={'assoInfoContaine'}>
-                            <h1 className={'assoName'}>GreenPeace</h1>
-                            <button ion-button className={'assoButton'}>A propos</button>
-                            <button ion-button className={'assoButton'}>Faire don</button>
-                        </div>
-                    </div>
-                    <div className={'association'}>
-                        <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
-                        <div className={'assoInfoContaine'}>
-                            <h1 className={'assoName'}>GreenPeace</h1>
-                            <button ion-button className={'assoButton'}>A propos</button>
-                            <button ion-button className={'assoButton'}>Faire don</button>
-                        </div>
-                    </div>
-                    <div className={'association'}>
-                        <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
-                        <div className={'assoInfoContaine'}>
-                            <h1 className={'assoName'}>GreenPeace</h1>
-                            <button ion-button className={'assoButton'}>A propos</button>
-                            <button ion-button className={'assoButton'}>Faire don</button>
-                        </div>
-                    </div>
-                    <div className={'association'}>
-                        <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
-                        <div className={'assoInfoContaine'}>
-                            <h1 className={'assoName'}>GreenPeace</h1>
-                            <button ion-button className={'assoButton'}>A propos</button>
-                            <button ion-button className={'assoButton'}>Faire don</button>
-                        </div>
-                    </div>
+                    { associations.map((asso: any) => {
+                        return (
+                            <div className={'association'}>
+                                <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
+                                <div className={'assoInfoContaine'}>
+                                    <h1 className={'assoName'}>{asso.name}</h1>
+                                    <button ion-button className={'assoButton'}>A propos</button>
+                                    <button ion-button className={'assoButton'}>Faire don</button>
+                                </div>
+                            </div>
+                        )
+                    }) }
                 </div>
             </IonContent>
         </IonPage>
