@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">biocalIonic</string>
-    <string name="title_activity_main">biocalIonic</string>
-    <string name="package_name">io.biolocal.fr</string>
-    <string name="custom_url_scheme">io.biolocal.fr</string>
-</resources>

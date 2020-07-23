@@ -53,7 +53,7 @@ const App: React.FC = () => (
           <Route path="/fidelity" component={Fidelity} exact={true} />
           <Route path="/don" component={Don} />
           <Route path="/partenaire" component={Partenaire} />
-          <Route path="/information" component={Apropos} />
+          <Route path="/APropos" component={Apropos} />
           <Route path="/" render={() => <Redirect to="/account" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom" class={'menu'}>
