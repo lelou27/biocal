@@ -1,9 +1,28 @@
-import React from 'react';
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonImg, IonGrid, IonRow, IonCol} from '@ionic/react';
+import React, {useEffect, useState} from 'react';
+import {IonContent, IonPage, IonImg, IonGrid, IonRow, IonCol} from '@ionic/react';
 import './Fidelity.css';
 import {AppHeader} from "../../components/AppHeader/AppHeader";
+import {getBarCode} from '../../services/BarCodeService';
 
 const Fidelity: React.FC = () => {
+    const [barcode, setBarCode] = useState('');
+
+    useEffect(() => {
+        if (barcode === '') {
+            fetchBarCode();
+        }
+    });
+
+    const fetchBarCode = async () => {
+        try {
+            const barCodeBase64 = await getBarCode();
+
+            setBarCode(barCodeBase64);
+        } catch (e) {
+            setBarCode('error');
+        }
+    }
+
     return (
         <IonPage>
             <AppHeader show={false}/>
@@ -29,8 +48,9 @@ const Fidelity: React.FC = () => {
                             </IonCol>
                         </IonRow>
                         <IonRow>
-                            <IonCol>
+                            <IonCol class="ionColFidelity">
                                 <IonImg src={require('../../assets/images/Biocal_Carte.png')} class={'imageCarte'}/>
+                                { barcode !== 'error' && barcode !== '' && <IonImg src={barcode} class={'barcodeImage'}/>}
                             </IonCol>
                         </IonRow>
                     </IonGrid>

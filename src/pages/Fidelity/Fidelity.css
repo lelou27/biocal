@@ -23,3 +23,11 @@
     text-align: center;
     margin-top: 7em;
 }
+
+.barcodeImage {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 35%;
+    width: 60%;
+    left: 22%;
+}
