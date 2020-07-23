@@ -1,0 +1,90 @@
+.grid{
+    display: grid;
+    height: 80vh;
+    grid-template-rows: repeat(5,1fr);
+    margin: 0 7px;
+    border: solid saddlebrown;
+    border-radius: 15px;
+}
+
+.grid-image{
+    grid-row: 1 / 3;
+}
+.greenpeace{
+    background-image: url("../../assets/images/Greenpeace@3x.png"),url("../../assets/images/bicycle-1822640_1920@3x.png");
+    background-size: 69%,cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+.grid-contenu{
+    grid-row: 3 / 5;
+    display: grid;
+    grid-template-areas: "Tag Text Text" "Tag Text Text" "Tag Text Text" "Tag Text Text";
+}
+.contenu-text{
+    grid-area: Text;
+    text-align: right;
+}
+.contenu-tag{
+    grid-area: Tag;
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    min-width: 33vw;
+    max-width: 33vw;
+    border: 2px solid green;
+    margin: 6px;
+    text-align: center;
+}
+.contenu-p{
+    font-size: 14px;
+}
+.tag-adherant {
+    background-image: url("../../assets/images/Biocal_Adhérants@3x.png");
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.tag-international {
+    background-image: url("../../assets/images/Biocal_Intenational@3x.png");
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.tag-environnement {
+    background-image: url("../../assets/images/Biocal_Environnement@3x.png");
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.tag-national {
+    background-image: url("../../assets/images/Biocal_National@3x.png");
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.tag-p{
+    margin-bottom: 0;
+    margin-top: 30%;
+    color: grey;
+    font-size: 11px;
+}
+
+.button{
+    grid-row: 5 / 6;
+    text-align: center;
+}
+
+.accountButton{
+    background-color: #603200;
+    color: white;
+    height: 1.7em;
+    margin-top: 20%;
+    width: 60%;
+    font-size: 1.5em;
+    text-align: center;
+    border-radius: 0.6em;
+}
