@@ -1,8 +1,12 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
-
+@font-face {
+  font-family: HelveticaRegular;
+  src: url("../assets/font/Helvetica65Medium_22443.woff");
+}
 /** Ionic CSS Variables **/
 :root {
+  --ion-font-family: HelveticaRegular;
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -225,4 +229,38 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-tab-bar-background: #1f1f1f;
   }
+}
+
+ion-tab-button {
+  background-color: #DE6000;
+  border: none;
+}
+
+.tabBarImg {
+  max-height: 100%;
+  object-fit: cover;
+}
+
+ion-tab-bar {
+  height: 10vh;
+}
+
+.tabPartn {
+  margin-top: 14%;
+}
+
+.tabDon {
+  margin-bottom: 7%;
+}
+
+.tabProfil {
+  height: 230%;
+  width: 230%;
+  margin-bottom: 10%;
+}
+
+.menu {
+  background-color: #DE6000;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
 }

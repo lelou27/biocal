@@ -1,10 +1,12 @@
 import React from 'react';
 import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonImg, IonGrid, IonRow, IonCol} from '@ionic/react';
 import './Fidelity.css';
+import {AppHeader} from "../../components/AppHeader/AppHeader";
 
 const Fidelity: React.FC = () => {
     return (
         <IonPage>
+            <AppHeader show={false}/>
             <IonContent>
                     <IonGrid>
                         <IonRow class='ion-align-items-center'>
@@ -23,7 +25,7 @@ const Fidelity: React.FC = () => {
                         </IonRow>
                         <IonRow>
                             <IonCol>
-                            <h1>Carte de fidelité</h1>
+                            <h1 className={'titreCarteFid'}>CARTE DE FIDELITÉ</h1>
                             </IonCol>
                         </IonRow>
                         <IonRow>
