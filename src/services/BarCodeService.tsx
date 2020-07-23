@@ -7,7 +7,7 @@ export const getBarCode = async (userId?: String) => {
     try {
         const barCodeUser = await axios.get(`${API_ROUTE}${ROUTE_GET_BARCODE}`,
             {
-                params: {idUser: '5f19b195691187b0b8421dbe'},
+                params: {idUser: '5f19b2819d62ce92803906d0'},
                 responseType: 'arraybuffer'
             });
 
