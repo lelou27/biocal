@@ -2,6 +2,7 @@
     width: 50%;
     margin-left: 5.7rem;
     position: absolute;
+    margin-top: -3rem;
 }
 
 .imageCarte {
@@ -11,17 +12,21 @@
 
 .points {
     margin-left: 2em;
+    font-size: 22px;
+    margin-top: -2rem;
 }
 
 .titreCarteFid {
     text-align: center;
     font-weight: bold;
     margin-bottom: -2rem;
+    font-size: 30px;
 }
 
 .nbPoints {
     text-align: center;
-    margin-top: 7em;
+    margin-top: 4.4rem;
+    font-size: 18px;
 }
 
 .barcodeImage {
