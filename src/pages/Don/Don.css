@@ -113,7 +113,8 @@
 }
 
 .assoButton{
-    background-color: #603200;
+    --background: #603200;
+    --background-activated: #603200;
     color: white;
     width: 35%;
     margin-top: 3%;
@@ -122,6 +123,7 @@
     border-radius: 1em;
     overflow: hidden;
 }
+
 
 .assoButton:hover{
     outline: none;

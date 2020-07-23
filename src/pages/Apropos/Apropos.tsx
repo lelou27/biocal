@@ -36,7 +36,7 @@ const Apropos: React.FC = () => {
                         </div>
                     </div>
                     <div className="button ">
-                        <button ion-button  className={'accountButton'}>Faire un don</button>
+                        <button ion-button  className={'accountButton2'}>Faire un don</button>
                     </div>
                 </div>
             </IonContent>
