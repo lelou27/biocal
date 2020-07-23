@@ -1,10 +1,12 @@
 import React from 'react';
 import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonImg, IonGrid, IonRow, IonCol} from '@ionic/react';
 import './Fidelity.css';
+import {AppHeader} from "../../components/AppHeader/AppHeader";
 
 const Fidelity: React.FC = () => {
     return (
         <IonPage>
+            <AppHeader />
             <IonContent>
                     <IonGrid>
                         <IonRow class='ion-align-items-center'>

@@ -6,7 +6,7 @@ import {AppHeader} from "../../components/AppHeader/AppHeader";
 const Account: React.FC = () => {
     return (
         <IonPage>
-            <AppHeader/>
+            <AppHeader />
             <IonContent>
                 <IonImg className={'imgProfile'} src={require("../../assets/images/profile-b.png")}/>
                 <div className={'container'}>
