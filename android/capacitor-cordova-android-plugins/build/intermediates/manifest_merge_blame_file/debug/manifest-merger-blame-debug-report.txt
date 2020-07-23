@@ -1,0 +1,63 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:amazon="http://schemas.amazon.com/apk/res/android"
+3    xmlns:android="http://schemas.android.com/apk/res/android"
+4    package="capacitor.android.plugins"
+5    android:versionCode="1"
+6    android:versionName="1.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="21"
+9-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+10        android:targetSdkVersion="29" />
+10-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+11
+12    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+12-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:1-76
+12-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:18-74
+13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+13-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:10:1-74
+13-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:10:18-72
+14
+15    <uses-feature android:name="android.hardware.location.gps" />
+15-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:1-61
+15-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:15-59
+16
+17    <uses-permission android:name="android.permission.CAMERA" />
+17-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:12:1-60
+17-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:12:18-58
+18    <uses-permission android:name="android.permission.FLASHLIGHT" />
+18-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:13:1-64
+18-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:13:18-62
+19
+20    <uses-feature
+20-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:14:1-79
+21        android:name="android.hardware.camera"
+21-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:14:15-53
+22        android:required="true" />
+22-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:14:54-77
+23
+24    <application>
+24-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-8:15
+25        <activity
+25-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-302
+26            android:name="com.google.zxing.client.android.CaptureActivity"
+26-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:11-73
+27            android:clearTaskOnLaunch="true"
+27-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:74-106
+28            android:configChanges="orientation|keyboardHidden|screenSize"
+28-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:107-168
+29            android:exported="false"
+29-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:276-300
+30            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+30-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:169-227
+31            android:windowSoftInputMode="stateAlwaysHidden" />
+31-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:228-275
+32        <activity
+32-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:1-103
+33            android:name="com.google.zxing.client.android.encode.EncodeActivity"
+33-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:11-79
+34            android:label="Share" />
+34-->C:\Users\leandreg\Documents\cesi\biolocal\biocalIonic\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:80-101
+35    </application>
+36
+37</manifest>
