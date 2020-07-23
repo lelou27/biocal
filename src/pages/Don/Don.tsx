@@ -23,8 +23,32 @@ const Don: React.FC = () => {
     const [associations, setAssociations] = useState<any>([]);
 
     useEffect(() => {
-       getAssociationLocal();
+        if (selected === '') {
+            getAssociationLocal();
+        }
     });
+
+    const getAssoFiltered = async () =>{
+        const assoFiltered: any[] = [];
+
+        setShowPopover(false);
+        setAssociations([]);
+
+        const assos = await getAssociation();
+        setAssociations(assos);
+
+        if (selected !== ''){
+            for (const asso of associations){
+                for (const tag of asso.tags) {
+                    if (tag === selected && !assoFiltered.includes(asso)){
+                        assoFiltered.push(asso);
+                    }
+                }
+            }
+
+            setAssociations(assoFiltered);
+        }
+    }
 
     const getAssociationLocal = async () => {
       try {
@@ -42,7 +66,11 @@ const Don: React.FC = () => {
             <AppHeader show={true}/>
             <IonContent>
                 <div className={'searchContainer'}>
-                    <IonSearchbar className={'searchField'} value={searchText} onIonChange={e => setSearchText(e.detail.value!)}></IonSearchbar>
+                    <IonSearchbar
+                        className={'searchField'}
+                        value={searchText}
+                        onIonChange={e => setSearchText(e.detail.value!)}>
+                    </IonSearchbar>
                     <IonImg className={'imgFilter'} onClick={() => setShowPopover(true)} src={require("../../assets/images/BIOCAL_Filtres.png")}/>
                 </div>
                 <IonPopover cssClass={'popover'} isOpen={showPopover} onDidDismiss={e => setShowPopover(false)}>
@@ -69,7 +97,7 @@ const Don: React.FC = () => {
                         </IonItem>
                     </IonRadioGroup>
                     <div className={'containerValidButton'}>
-                        <button ion-button className={'validButton'} onClick={e => setShowPopover(false)}>Valider</button>
+                        <button ion-button className={'validButton'} onClick={async () => await getAssoFiltered()}>Valider</button>
                     </div>
                 </IonPopover>
                 <div className={'assoContainer'}>
@@ -79,8 +107,8 @@ const Don: React.FC = () => {
                                 <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
                                 <div className={'assoInfoContaine'}>
                                     <h1 className={'assoName'}>{asso.name}</h1>
-                                    <button ion-button className={'assoButton'}>A propos</button>
-                                    <button ion-button className={'assoButton'}>Faire don</button>
+                                    <IonButton className={'assoButton'} href={'/Apropos'}>A propos</IonButton>
+                                    <IonButton className={'assoButton'} href={'FaireDon'}>Faire don</IonButton>
                                 </div>
                             </div>
                         )
