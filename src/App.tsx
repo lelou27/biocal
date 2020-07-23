@@ -43,6 +43,7 @@ import Don from "./pages/Don/Don";
 import Partenaire from "./pages/Partenaire/Partenaire";
 import Information from "./pages/Information/Information";
 import Apropos from "./pages/Apropos/Apropos";
+import FaireDon from "./pages/FaireDon/FaireDon";
 
 const App: React.FC = () => (
   <IonApp>
@@ -54,6 +55,7 @@ const App: React.FC = () => (
           <Route path="/don" component={Don} />
           <Route path="/partenaire" component={Partenaire} />
           <Route path="/APropos" component={Apropos} />
+          <Route path="/FaireDon" component={FaireDon} />
           <Route path="/" render={() => <Redirect to="/account" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom" class={'menu'}>
