@@ -9,20 +9,20 @@ const Account: React.FC = () => {
             <AppHeader/>
             <IonContent>
                 <IonImg className={'imgProfile'} src={require("../../assets/images/profile-b.png")}/>
-                <div>
-                    <textarea disabled>Prénom</textarea>
-                    <textarea disabled>Nom</textarea>
-                    <textarea disabled>Ville</textarea>
+                <div className={'container'}>
+                    <textarea disabled className={'personalInfo'}>Prénom</textarea>
+                    <textarea disabled className={'personalInfo'}>Nom</textarea>
+                    <textarea disabled className={'personalInfo'}>Ville</textarea>
                 </div>
-                <h1>Gérer mes identifiant : </h1>
-                <div>
-                    <textarea>Email</textarea>
-                    <textarea>Password</textarea>
+                <h1 className={'usernameTitle'}>Gérer mes identifiant : </h1>
+                <div className={'container'}>
+                    <textarea className={'personalInfo'}>Email</textarea>
+                    <textarea className={'personalInfo'}>Password</textarea>
                 </div>
                 <div className={'buttondiv'}>
-                    <button ion-button>Modifier</button>
+                    <button ion-button className={'accountButton'}>Modifier</button>
                     <br/>
-                    <button ion-button>Déconnexion</button>
+                    <button ion-button className={'accountButton'}>Déconnexion</button>
                 </div>
             </IonContent>
         </IonPage>
