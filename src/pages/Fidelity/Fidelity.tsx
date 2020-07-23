@@ -4,12 +4,14 @@ import './Fidelity.css';
 import {AppHeader} from "../../components/AppHeader/AppHeader";
 import {getBarCode} from '../../services/BarCodeService';
 import {getUser} from '../../services/UserService';
+import {getActuelsXp} from "../../services/UserService";
 
 const Fidelity: React.FC = () => {
     const [barcode, setBarCode] = useState('');
     const [user, setUser] = useState({ _id: String, userXP: Number});
     const [error, setError] = useState(Boolean);
     const [loaded, setLoaded] = useState(Boolean);
+    const [xp, setXp] = useState<any>(null);
 
     useEffect(() => {
         if (barcode === '') {
@@ -18,6 +20,10 @@ const Fidelity: React.FC = () => {
 
         if (!error && !loaded) {
             getLocalUser();
+        }
+
+        if(xp === null) {
+            getXp();
         }
     });
 
@@ -43,6 +49,16 @@ const Fidelity: React.FC = () => {
         }
     };
 
+    const getXp = async () => {
+        try {
+            const xp = await getActuelsXp('5f19b195691187b0b8421dbe');
+
+            setXp(xp);
+        } catch (e) {
+            setError(true);
+        }
+    };
+
     return (
         <IonPage>
             <AppHeader show={false}/>
@@ -51,7 +67,7 @@ const Fidelity: React.FC = () => {
                         <IonRow class='ion-align-items-center'>
                             <IonCol>
                                 <IonImg src={require('../../assets/images/Biocal_Jauge.png')} class='imageJauge'/>
-                                <p className={'nbPoints'}>Tant de points</p>
+                                <p className={'nbPoints'}>{xp} points</p>
                             </IonCol>
                         </IonRow>
                         <IonRow class={'points'}>

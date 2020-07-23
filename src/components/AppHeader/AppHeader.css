@@ -11,3 +11,10 @@ ion-col{
     margin: auto;
     display: block;
 }
+
+.nbPointsHeader {
+    text-align: right;
+    width: 90%;
+    margin-top: 5rem;
+    position: absolute;
+}

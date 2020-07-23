@@ -38,6 +38,7 @@ const Account: React.FC = () => {
             setLoaded(true);
         }
     };
+
     const email = (user.email).toString();
 
     return (
