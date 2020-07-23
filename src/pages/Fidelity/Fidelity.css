@@ -1,6 +1,6 @@
 .imageJauge {
     width: 50%;
-    margin-left: 5.4em;
+    margin-left: 5.7rem;
     position: absolute;
 }
 
@@ -13,8 +13,10 @@
     margin-left: 2em;
 }
 
-h1 {
+.titreCarteFid {
     text-align: center;
+    font-weight: bold;
+    margin-bottom: -2rem;
 }
 
 .nbPoints {

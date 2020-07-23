@@ -3,6 +3,7 @@ import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
+  IonImg,
   IonLabel,
   IonRouterOutlet,
   IonTabBar,
@@ -54,26 +55,18 @@ const App: React.FC = () => (
           <Route path="/information" component={Information} />
           <Route path="/" render={() => <Redirect to="/account" />} exact={true} />
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
+        <IonTabBar slot="bottom" class={'menu'}>
           <IonTabButton tab="account" href="/account">
-            <IonIcon icon={personCircleOutline} />
-            <IonLabel>Mon compte</IonLabel>
+            <IonImg src={require('./assets/images/BIOCAL_Profil.png')} class={'tabBarImg tabProfil'}/>
           </IonTabButton>
           <IonTabButton tab="fidelity" href="/fidelity">
-            <IonIcon icon={cardOutline} />
-            <IonLabel>Carte fidélité</IonLabel>
+            <IonImg src={require('./assets/images/Biocal_Logo.png')} class={'tabBarImg tabCarte'}/>
           </IonTabButton>
           <IonTabButton tab="don" href="/don">
-            <IonIcon icon={cashOutline} />
-            <IonLabel>Faire don</IonLabel>
+            <IonImg src={require('./assets/images/BIOCAL_Dons.png')} class={'tabBarImg tabDon'}/>
           </IonTabButton>
           <IonTabButton tab="partenaire" href="/partenaire">
-            <IonIcon icon={mapOutline} />
-            <IonLabel>Carte partenaire</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="information" href="/information">
-            <IonIcon icon={informationCircleOutline} />
-            <IonLabel>Informations</IonLabel>
+            <IonImg src={require('./assets/images/BIOCAL_Partenaires.png')} class={'tabBarImg tabPartn'}/>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

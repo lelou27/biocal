@@ -6,7 +6,7 @@ import {AppHeader} from "../../components/AppHeader/AppHeader";
 const Don: React.FC = () => {
     return (
         <IonPage>
-            <AppHeader/>
+            <AppHeader show={true}/>
             <IonContent>
                 <textarea className={'searchField'}>Recherche</textarea>
             </IonContent>
