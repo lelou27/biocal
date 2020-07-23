@@ -41,6 +41,7 @@ import Fidelity from "./pages/Fidelity/Fidelity";
 import Don from "./pages/Don/Don";
 import Partenaire from "./pages/Partenaire/Partenaire";
 import Information from "./pages/Information/Information";
+import Apropos from "./pages/Apropos/Apropos";
 
 const App: React.FC = () => (
   <IonApp>
@@ -51,7 +52,7 @@ const App: React.FC = () => (
           <Route path="/fidelity" component={Fidelity} exact={true} />
           <Route path="/don" component={Don} />
           <Route path="/partenaire" component={Partenaire} />
-          <Route path="/information" component={Information} />
+          <Route path="/information" component={Apropos} />
           <Route path="/" render={() => <Redirect to="/account" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
