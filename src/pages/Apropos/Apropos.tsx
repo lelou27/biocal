@@ -3,10 +3,14 @@ import React from "react";
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonImg,IonButtons } from '@ionic/react';
 import {AppHeader} from "../../components/AppHeader/AppHeader";
 
+const handleClick = () => {
+    // this.context.location.transitionTo('login');
+};
+
 const Apropos: React.FC = () => {
     return(
         <IonPage>
-            <AppHeader/>
+            <AppHeader show={true}/>
             <IonContent>
                 <div className="grid">
                     <div className="grid-image greenpeace">

@@ -1,0 +1,15 @@
+.grid-contenu-fairedon{
+    grid-row: 3 / 5;
+    display: grid;
+    grid-template-areas: "Jauge" "Select"  ;
+    text-align: center  ;
+}
+
+.jauge{
+    grid-area: Jauge;
+}
+
+.select-prix{
+    grid-area: Select;
+}
+
