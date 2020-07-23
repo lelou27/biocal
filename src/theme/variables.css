@@ -267,3 +267,5 @@ ion-tab-bar {
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
 }
+
+#mapid { height: 80%; }
