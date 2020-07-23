@@ -3,13 +3,21 @@ import {IonContent, IonPage, IonImg, IonGrid, IonRow, IonCol} from '@ionic/react
 import './Fidelity.css';
 import {AppHeader} from "../../components/AppHeader/AppHeader";
 import {getBarCode} from '../../services/BarCodeService';
+import {getUser} from '../../services/UserService';
 
 const Fidelity: React.FC = () => {
     const [barcode, setBarCode] = useState('');
+    const [user, setUser] = useState({ _id: String, userXP: Number});
+    const [error, setError] = useState(Boolean);
+    const [loaded, setLoaded] = useState(Boolean)
 
     useEffect(() => {
         if (barcode === '') {
             fetchBarCode();
+        }
+
+        if (!error && !loaded) {
+            getLocalUser();
         }
     });
 
@@ -21,13 +29,25 @@ const Fidelity: React.FC = () => {
         } catch (e) {
             setBarCode('error');
         }
-    }
+    };
+
+    const getLocalUser = async () => {
+        try {
+            const user = await getUser('5f19b195691187b0b8421dbe');
+
+            setUser(user);
+            setLoaded(true);
+        } catch (e) {
+            setError(true);
+            setLoaded(true);
+        }
+    };
 
     return (
         <IonPage>
             <AppHeader show={false}/>
             <IonContent>
-                    <IonGrid>
+                {!error && loaded && <IonGrid>
                         <IonRow class='ion-align-items-center'>
                             <IonCol>
                                 <IonImg src={require('../../assets/images/Biocal_Jauge.png')} class='imageJauge'/>
@@ -36,7 +56,7 @@ const Fidelity: React.FC = () => {
                         </IonRow>
                         <IonRow class={'points'}>
                             <IonCol>
-                                <p>Nb de points cumulés</p>
+                                <p>{user.userXP} points cumulés</p>
                             </IonCol>
                             <IonCol>
                                 <p>5€ dons cumulés</p>
@@ -54,6 +74,7 @@ const Fidelity: React.FC = () => {
                             </IonCol>
                         </IonRow>
                     </IonGrid>
+                }
             </IonContent>
         </IonPage>
     );
