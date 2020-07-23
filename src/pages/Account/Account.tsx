@@ -2,7 +2,6 @@ import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonImg,IonButtons } from '@ionic/react';
 import './Account.css';
 import {AppHeader} from "../../components/AppHeader/AppHeader";
-import Barcode from "react-native-barcode-builder";
 
 const Account: React.FC = () => {
     return (
@@ -25,7 +24,6 @@ const Account: React.FC = () => {
                     <br/>
                     <button ion-button>Déconnexion</button>
                 </div>
-                <Barcode value="Hello World" format="CODE128" />
             </IonContent>
         </IonPage>
     );
