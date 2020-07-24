@@ -1,0 +1,60 @@
+.inscriptionTitle{
+    font-weight: bold;
+    text-align: center;
+}
+
+.sexChoice{
+    width: 80%;
+    margin-left: 8%;
+    margin-right: 12%;
+    padding: 0;
+    text-align: center;
+}
+
+.sexChoiceLabel{
+    text-align: center;
+}
+
+.inscriptionField{
+    background-color: #DE6000;
+    text-align: left;
+    border-radius: 0.75em;
+    width: 75%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    margin-top: 1em;
+    color: white;
+    font-size: 16px;
+    --padding-start: 2em;
+    --placeholder-opacity: 100%;
+}
+
+.inscriptionField2{
+    background-color: #255E00;
+    border-radius: 0.75em;
+    text-align: left;
+    width: 75%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    margin-top: 1em;
+    color: white;
+    font-size: 16px;
+    --padding-start: 2em;
+    --placeholder-opacity : 100%;
+}
+
+.inscriptionButton{
+    --background: #603200;
+    --background-activated: #603200;
+    color: white;
+    width: 35%;
+    margin-top: 3%;
+    height: 1.7em;
+    font-size: 1.2em;
+    border-radius: 0.75em;
+    overflow: hidden;
+}
+
+.inscriptionContainer{
+    text-align: center;
+}
