@@ -13,7 +13,7 @@ import {
 } from '@ionic/react';
 import './Account.css';
 import {AppHeader} from "../../components/AppHeader/AppHeader";
-import {getUser} from '../../services/UserService';
+import {getUser, loggout} from '../../services/UserService';
 
 const Account: React.FC = () => {
 
@@ -41,6 +41,11 @@ const Account: React.FC = () => {
 
     const email = (user.email).toString();
 
+    const logoutLocal = async () => {
+        await loggout();
+        window.location.href = '/';
+    }
+
     return (
         <IonPage>
             <AppHeader show={true}/>
@@ -59,7 +64,7 @@ const Account: React.FC = () => {
                 <div className={'buttondiv'}>
                     <button ion-button className={'accountButton'}>Modifier</button>
                     <br/>
-                    <button ion-button className={'accountButton'}>Déconnexion</button>
+                    <button ion-button className={'accountButton'} onClick={() => logoutLocal()}>Déconnexion</button>
                 </div>
             </IonContent>
         </IonPage>

@@ -1,23 +1,15 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
-  IonApp,
-  IonIcon,
-  IonImg,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs
+    IonApp,
+    IonImg,
+    IonRouterOutlet,
+    IonTabBar,
+    IonTabButton,
+    IonTabs
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import {
-  cardOutline,
-  cashOutline,
-  informationCircleOutline,
-  mapOutline,
-  personCircleOutline
-} from 'ionicons/icons';
+import {isLogged} from "./services/UserService";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -44,39 +36,52 @@ import Partenaire from "./pages/Partenaire/Partenaire";
 import Information from "./pages/Information/Information";
 import Apropos from "./pages/Apropos/Apropos";
 import FaireDon from "./pages/FaireDon/FaireDon";
-import Inscription from "./pages/Inscription/Inscription";
+import {Auth} from "./pages/Auth/Auth";
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route path="/account" component={Account} exact={true} />
-          <Route path="/fidelity" component={Fidelity} exact={true} />
-          <Route path="/don" component={Don} />
-          <Route path="/partenaire" component={Partenaire} />
-          <Route path="/APropos" component={Apropos} />
-          <Route path="/FaireDon" component={FaireDon} />
-          <Route path="/Inscription" component={Inscription} />
-          <Route path="/" render={() => <Redirect to="/account" />} exact={true} />
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom" class={'menu'}>
-          <IonTabButton tab="account" href="/account">
-            <IonImg src={require('./assets/images/BIOCAL_Profil.png')} class={'tabBarImg tabProfil'}/>
-          </IonTabButton>
-          <IonTabButton tab="fidelity" href="/fidelity">
-            <IonImg src={require('./assets/images/Biocal_Logo.png')} class={'tabBarImg tabCarte'}/>
-          </IonTabButton>
-          <IonTabButton tab="don" href="/don">
-            <IonImg src={require('./assets/images/BIOCAL_Dons.png')} class={'tabBarImg tabDon'}/>
-          </IonTabButton>
-          <IonTabButton tab="partenaire" href="/partenaire">
-            <IonImg src={require('./assets/images/BIOCAL_Partenaires.png')} class={'tabBarImg tabPartn'}/>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+    const [userLogged, setUserLogged] = useState(Boolean);
+
+    useEffect(() => {
+        isLogged().then((logged) => {
+            setUserLogged(logged)
+        });
+    });
+
+    return (
+        <IonApp>
+        <IonReactRouter>
+          { !userLogged && (
+              <Auth />
+          ) }
+          { userLogged && (<IonTabs>
+            <IonRouterOutlet>
+              <Route path="/account" component={Account} exact={true} />
+              <Route path="/fidelity" component={Fidelity} exact={true} />
+              <Route path="/don" component={Don} />
+              <Route path="/partenaire" component={Partenaire} />
+              <Route path="/APropos" component={Apropos} />
+              <Route path="/FaireDon" component={FaireDon} />
+              <Route path="/" render={() => <Redirect to="/account" />} exact={true} />
+            </IonRouterOutlet>
+            <IonTabBar slot="bottom" class={'menu'}>
+              <IonTabButton tab="account" href="/account">
+                <IonImg src={require('./assets/images/BIOCAL_Profil.png')} class={'tabBarImg tabProfil'}/>
+              </IonTabButton>
+              <IonTabButton tab="fidelity" href="/fidelity">
+                <IonImg src={require('./assets/images/Biocal_Logo.png')} class={'tabBarImg tabCarte'}/>
+              </IonTabButton>
+              <IonTabButton tab="don" href="/don">
+                <IonImg src={require('./assets/images/BIOCAL_Dons.png')} class={'tabBarImg tabDon'}/>
+              </IonTabButton>
+              <IonTabButton tab="partenaire" href="/partenaire">
+                <IonImg src={require('./assets/images/BIOCAL_Partenaires.png')} class={'tabBarImg tabPartn'}/>
+              </IonTabButton>
+            </IonTabBar>
+          </IonTabs>
+            )}
+        </IonReactRouter>
+      </IonApp>
+    )
+};
 
 export default App;

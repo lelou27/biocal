@@ -15,10 +15,6 @@ class Barcode extends React.Component {
         const { value, name } = event.target;
 
         this.setState({ [name]: value });
-
-        console.log(this.state);
-
-
     };
 
     render() {
@@ -32,7 +28,6 @@ class Barcode extends React.Component {
         const generateCode = () => {
             BarcodeScanner.encode(BarcodeScanner.Encode.TEXT_TYPE, this.state.encodeData)
                 .then(data => {
-                    console.log(data);
                     //this.setState({ textToEncode: encodedData });
                 }, err => {
                     console.log("Error occured : " + err);
