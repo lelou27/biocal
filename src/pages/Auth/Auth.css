@@ -1,0 +1,43 @@
+.imageAuth {
+    height: 40vh;
+}
+
+.titleAuth {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.rowButtonAuth {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.btnAuth {
+    background-color: #603200;
+}
+
+.btnAuth {
+    background-color: #603200;
+    border-radius: 20px;
+}
+
+.forgetPassItem {
+    width: 100%;
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.forgetPassItem a {
+    font-style: italic;
+    text-decoration: none;
+    font-size: 1em;
+    color: #000;
+}
+
+.color-danger {
+    color: red;
+}

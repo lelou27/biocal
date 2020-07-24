@@ -54,6 +54,7 @@ const Don: React.FC = () => {
       try {
           if (associations.length === 0) {
               const assos = await getAssociation();
+              console.log(assos)
               setAssociations(assos);
           }
       } catch (e) {
@@ -101,7 +102,7 @@ const Don: React.FC = () => {
                     </div>
                 </IonPopover>
                 <div className={'assoContainer'}>
-                    { associations.map((asso: any) => {
+                    { associations.length !== 0 && associations.map((asso: any) => {
                         return (
                             <div className={'association'}>
                                 <IonImg className={'imgAsso'} src={require("../../assets/images/Greenpeace-logo-1.jpg")}/>
