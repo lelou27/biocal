@@ -30,7 +30,6 @@ const Account: React.FC = () => {
     const getLocalUser = async () => {
         try {
             const user = await getUser('5f19b195691187b0b8421dbe');
-            console.log(user);
             setUser(user);
             setLoaded(true);
         } catch (e) {

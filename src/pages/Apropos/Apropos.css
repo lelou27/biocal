@@ -81,7 +81,8 @@
 }
 
 .accountButton2{
-    background-color: #603200;
+    --background: #603200;
+    --background-activated: #603200;
     color: white;
     height: 1.7em;
     margin-top: 10%;

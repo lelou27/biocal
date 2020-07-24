@@ -1,6 +1,6 @@
 import './Apropos.css';
 import React from "react";
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonImg,IonButtons } from '@ionic/react';
+import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonImg, IonButtons, IonButton} from '@ionic/react';
 import {AppHeader} from "../../components/AppHeader/AppHeader";
 
 const handleClick = () => {
@@ -36,7 +36,7 @@ const Apropos: React.FC = () => {
                         </div>
                     </div>
                     <div className="button ">
-                        <button ion-button  className={'accountButton2'}>Faire un don</button>
+                        <IonButton className={'accountButton2'} href={'/FaireDon'}>Faire un don</IonButton>
                     </div>
                 </div>
             </IonContent>
